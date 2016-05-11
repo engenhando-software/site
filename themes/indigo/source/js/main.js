@@ -85,46 +85,7 @@
                     toc.classList.remove('fixed');
                 }
             };
-        })(),
-        share: function() {
-
-            var share = d.getElementById('global-share'),
-                data = share.dataset,
-                title = data.title,
-                url = data.url,
-                summary = data.summary,
-                pic = data.pic,
-                div = d.createElement('div'),
-                sns = d.getElementsByClassName('share-sns'),
-                api;
-
-            div.innerHTML = summary;
-            summary = div.innerText;
-            div = undefined;
-
-            api = 'http://www.jiathis.com/send/?webid={service}&url=' + url + '&title=' + title + '&summary=' + summary + '&pic=' + pic;
-
-            function goShare(service) {
-                w.open(encodeURI(api.replace('{service}', service)));
-            }
-
-            [].forEach.call(sns, function(el) {
-                el.addEventListener('click', function() {
-                    goShare(this.dataset.service);
-                }, false);
-            });
-
-            return {
-                show: function() {
-                    mask.classList.add('in');
-                    share.classList.add('in');
-                },
-                hide: function() {
-                    share.classList.remove('in');
-                    mask.classList.remove('in');
-                }
-            };
-        }
+        })()
     };
 
     menu.addEventListener('touchmove', function(e) {
@@ -140,12 +101,6 @@
         Blog.toggleMenu();
     });
 
-    var share = Blog.share();
-
-    menuShare.addEventListener(even, function() {
-        share.show();
-    }, false);
-
     gotop.addEventListener(even, function() {
         animate(Blog.goTop);
     }, false);
@@ -156,11 +111,6 @@
 
     menuOff.addEventListener(even, function() {
         menu.classList.add('hide');
-    }, false);
-
-    mask.addEventListener(even, function() {
-        Blog.toggleMenu();
-        share.hide();
     }, false);
 
     d.addEventListener('scroll', function() {
