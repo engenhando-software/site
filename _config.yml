@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Engenhando Software
+title: Engenheirando Software
 subtitle: Minhas observações sobre Engenharia de Software
 description: Blog sobre engenharia de software
 author: Jonathas Amaral
@@ -74,5 +74,5 @@ theme: indigo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/engenhando-software/engenhando-software.github.io
+  repo: https://github.com/engenheirando-software/engenheirando-software.github.io
   branch: master
